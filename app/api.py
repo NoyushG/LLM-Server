@@ -16,7 +16,7 @@ class PromptResponse(BaseModel):
 @router.get("/")
 def root():
     """
-    Welcome message for root endpoint (/api)
+    Welcome message for root endpoint
     """
     return {"message": "Welcome to LLM Service!"}
 
