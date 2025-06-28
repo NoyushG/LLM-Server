@@ -22,3 +22,7 @@ cd LLMPythonProject
 2. Install dependencies:
 pip install -r requirements.txt
 3. Run main.py to activate the server
+OR Use docker: Build the Docker image: docker build -t llm-api .
+then Run the container: docker run -p 8000:8000 llm-api
+
+Visit http://localhost:8000/docs to use the Swagger UI.
