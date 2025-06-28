@@ -8,6 +8,7 @@ import pytest
 
 client = TestClient(app)
 
+
 def test_generate_with_generic_prompt():
     """
     Test that a non-empty prompt returns a response with status 200
