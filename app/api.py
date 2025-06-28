@@ -7,16 +7,19 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+
 class PromptRequest(BaseModel):
     prompt: str
+
 
 class PromptResponse(BaseModel):
     response: str
 
+
 @router.get("/")
 def root():
     """
-    Welcome message for root endpoint
+    Welcome message for root endpoint (/api)
     """
     return {"message": "Welcome to LLM Service!"}
 
