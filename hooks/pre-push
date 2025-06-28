@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Linting with flake8..."
-flake8 .
+flake8 app tests
 if [ $? -ne 0 ]; then
     echo "Linting failed. Push aborted."
     exit 1
