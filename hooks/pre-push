@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo "Running tests..."
+pytest
+if [ $? -ne 0 ]; then
+    echo "Tests failed. Push aborted."
+    exit 1
+fi
+
+echo "Checking types with mypy..."
+mypy .
+if [ $? -ne 0 ]; then
+    echo "Type check failed. Push aborted."
+    exit 1
+fi
+
+echo "Linting with flake8..."
+flake8 .
+if [ $? -ne 0 ]; then
+    echo "Linting failed. Push aborted."
+    exit 1
+fi
+
+echo "Formatting check with black (in check mode)..."
+black --check .
+if [ $? -ne 0 ]; then
+    echo "Formatting issues detected. Push aborted."
+    exit 1
+fi
+
+echo "All checks passed. Proceeding with push."
+exit 0
